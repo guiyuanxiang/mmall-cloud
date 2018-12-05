@@ -1,0 +1,18 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: order
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    username: root
+#    password: 123456
+#    url: jdbc:mysql://127.0.0.1/mmall_order?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+#  devtools:
+#    add-properties: false
+eureka:
+  instance:
+    hostname: order
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/,http://eureka3:8763/eureka/

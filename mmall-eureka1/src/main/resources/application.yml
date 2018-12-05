@@ -1,0 +1,22 @@
+#更改服务端口
+server:
+  port: 8761
+#注册中心虽然是一个server端，但同时也是一个client端，需要找一个server将自己注册
+eureka:
+  instance:
+    hostname: eureka1
+  client:
+    #将eureka1注册到eureka2上
+    service-url:
+      #需要修改host文件 将localhost映射到8761 8762 8763
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/,http://eureka3:8763/eureka/
+    #放弃客户端注册到服务端
+    register-with-eureka: false
+    fetch-registry: false
+    #关闭自我保护
+  server:
+    enable-self-preservation: false
+spring:
+  application:
+    name: eureka1
+
