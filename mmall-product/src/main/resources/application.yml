@@ -1,0 +1,21 @@
+#更改服务端口
+server:
+  port: 8765
+
+eureka:
+  instance:
+    hostname: mmall-product
+  client:
+    #将eureka1注册到eureka2上
+    service-url:
+      #需要修改host文件 将localhost映射到8761 8762 8763
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/,http://eureka3:8763/eureka/
+
+spring:
+  application:
+    name: mmall-product
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/mmall_product?characterEncoding=utf-8
