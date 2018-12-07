@@ -15,7 +15,59 @@ spring:
   application:
     name: mmall-product
   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
     url: jdbc:mysql://127.0.0.1:3306/mmall_product?characterEncoding=utf-8
+    druid:
+      # 初始化大小，最小，最大
+      initial-size: 5
+      min-idle: 5
+      max-active: 300
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      time-between-log-stats-millis: 300000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      # 校验SQL，Oracle配置 spring.datasource.validationQuery=SELECT 1 FROM DUAL，如果不配validationQuery项，则下面三项配置无用
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      max-pool-prepared-statement-per-connection-size: 20
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,slf4j,config
+      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      filter-class-names: stat
+      #关闭空闲连接超时时间
+      remove-abandoned-timeout: 1800
+      #事务查询超时时间
+      transaction-query-timeout: 6000
+      #查询超时时间
+      query-timeout: 6000
+
+      filter:
+          stat:
+              merge-sql: true
+              db-type: mysql
+              log-slow-sql: true
+              slow-sql-millis: 2000
+          wall:
+              enabled: true
+              db-type: mysql
+              config:
+                  delete-allow: true
+                  drop-table-allow: true
+      # 合并多个DruidDataSource的监控数据
+      use-global-data-source-stat: true
+
+
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+logging:
+  level: debug

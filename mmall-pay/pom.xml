@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mmall</groupId>
-    <artifactId>pay</artifactId>
+    <artifactId>mmall-pay</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>pay</name>
+    <name>mmall-pay</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
