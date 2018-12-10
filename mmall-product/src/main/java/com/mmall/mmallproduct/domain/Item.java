@@ -37,19 +37,9 @@ public class Item implements Serializable {
     private String barCode;
 
     /**
-     * 主图 todo 大字段单独列表
-     */
-    private String mainImg;
-
-    /**
      * 商品属性
      */
     private String property;
-
-    /**
-     * 商品描述 todo 大字段单独列表
-     */
-    private String description;
 
     /**
      * 商品卖点
