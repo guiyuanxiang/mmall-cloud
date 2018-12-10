@@ -1,6 +1,7 @@
 package com.mmall.mmallproduct.mapper;
 
 import com.mmall.mmallproduct.pojo.domain.Item;
+import com.mmall.mmallproduct.pojo.param.ItemParam;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -32,4 +33,6 @@ public interface ItemMapper {
      * @return int
      */
     int update(@Param("item") Item item);
+
+    List<Item> list(ItemParam itemParam);
 }

@@ -11,5 +11,11 @@ import java.util.List;
  */
 public interface ItemService {
 
+    /**
+     * 商品分页
+     *
+     * @param itemParam 商品参数
+     * @return List<ItemVo>
+     */
     List<ItemVo> list(ItemParam itemParam);
 }

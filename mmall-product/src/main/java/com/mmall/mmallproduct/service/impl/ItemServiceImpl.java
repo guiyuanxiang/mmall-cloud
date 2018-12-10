@@ -1,6 +1,7 @@
 package com.mmall.mmallproduct.service.impl;
 
 import com.mmall.mmallproduct.mapper.ItemMapper;
+import com.mmall.mmallproduct.pojo.domain.Item;
 import com.mmall.mmallproduct.pojo.param.ItemParam;
 import com.mmall.mmallproduct.pojo.vo.ItemVo;
 import com.mmall.mmallproduct.service.ItemService;
@@ -30,6 +31,7 @@ public class ItemServiceImpl implements ItemService {
      */
     @Override
     public List<ItemVo> list(ItemParam itemParam) {
+        List<Item> items = itemMapper.list(itemParam);
         return null;
     }
 }
