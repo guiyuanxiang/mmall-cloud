@@ -1,4 +1,4 @@
-package com.mmall.mmallproduct.domain;
+package com.mmall.mmallproduct.pojo.domain;
 
 import lombok.Data;
 

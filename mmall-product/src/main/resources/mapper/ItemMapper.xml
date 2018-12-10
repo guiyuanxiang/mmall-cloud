@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mmall.mmallproduct.mapper.ItemMapper">
+    <!--auto generated Code-->
+    <resultMap id="BaseResultMap" type="com.mmall.mmallproduct.pojo.domain.Item">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="item_code" property="itemCode" jdbcType="VARCHAR"/>
+        <result column="bar_code" property="barCode" jdbcType="VARCHAR"/>
+        <result column="property" property="property" jdbcType="VARCHAR"/>
+        <result column="selling_point" property="sellingPoint" jdbcType="VARCHAR"/>
+        <result column="buy_remind" property="buyRemind" jdbcType="VARCHAR"/>
+        <result column="expiration_date" property="expirationDate" jdbcType="TIMESTAMP"/>
+        <result column="tags" property="tags" jdbcType="VARCHAR"/>
+        <result column="category_id" property="categoryId" jdbcType="INTEGER"/>
+        <result column="brand_id" property="brandId" jdbcType="INTEGER"/>
+        <result column="unit_id" property="unitId" jdbcType="INTEGER"/>
+        <result column="expiration_date_status" property="expirationDateStatus" jdbcType="INTEGER"/>
+        <result column="item_type" property="itemType" jdbcType="INTEGER"/>
+        <result column="is_present" property="isPresent" jdbcType="TINYINT"/>
+        <result column="is_recycle" property="isRecycle" jdbcType="TINYINT"/>
+        <result column="is_deleted" property="isDeleted" jdbcType="TINYINT"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="Base_Column_List">
+        id,
+        title,
+        item_code,
+        bar_code,
+        property,
+        selling_point,
+        buy_remind,
+        expiration_date,
+        tags,
+        category_id,
+        brand_id,
+        unit_id,
+        expiration_date_status,
+        item_type,
+        is_present,
+        is_recycle,
+        is_deleted,
+        create_time,
+        update_time
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="item.id">
+        INSERT INTO item (
+            id,
+            title,
+            item_code,
+            bar_code,
+            property,
+            selling_point,
+            buy_remind,
+            expiration_date,
+            tags,
+            category_id,
+            brand_id,
+            unit_id,
+            expiration_date_status,
+            item_type,
+            is_present,
+            is_recycle,
+            is_deleted,
+            create_time,
+            update_time
+        ) VALUES (
+            #{item.id,jdbcType=INTEGER},
+            #{item.title,jdbcType=VARCHAR},
+            #{item.itemCode,jdbcType=VARCHAR},
+            #{item.barCode,jdbcType=VARCHAR},
+            #{item.property,jdbcType=VARCHAR},
+            #{item.sellingPoint,jdbcType=VARCHAR},
+            #{item.buyRemind,jdbcType=VARCHAR},
+            #{item.expirationDate,jdbcType=TIMESTAMP},
+            #{item.tags,jdbcType=VARCHAR},
+            #{item.categoryId,jdbcType=INTEGER},
+            #{item.brandId,jdbcType=INTEGER},
+            #{item.unitId,jdbcType=INTEGER},
+            #{item.expirationDateStatus,jdbcType=INTEGER},
+            #{item.itemType,jdbcType=INTEGER},
+            #{item.isPresent,jdbcType=TINYINT},
+            #{item.isRecycle,jdbcType=TINYINT},
+            #{item.isDeleted,jdbcType=TINYINT},
+            #{item.createTime,jdbcType=TIMESTAMP},
+            #{item.updateTime,jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="item.id">
+        INSERT INTO item
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="item.id!=null"> id,</if>
+            <if test="item.title!=null"> title,</if>
+            <if test="item.itemCode!=null"> item_code,</if>
+            <if test="item.barCode!=null"> bar_code,</if>
+            <if test="item.property!=null"> property,</if>
+            <if test="item.sellingPoint!=null"> selling_point,</if>
+            <if test="item.buyRemind!=null"> buy_remind,</if>
+            <if test="item.expirationDate!=null"> expiration_date,</if>
+            <if test="item.tags!=null"> tags,</if>
+            <if test="item.categoryId!=null"> category_id,</if>
+            <if test="item.brandId!=null"> brand_id,</if>
+            <if test="item.unitId!=null"> unit_id,</if>
+            <if test="item.expirationDateStatus!=null"> expiration_date_status,</if>
+            <if test="item.itemType!=null"> item_type,</if>
+            <if test="item.isPresent!=null"> is_present,</if>
+            <if test="item.isRecycle!=null"> is_recycle,</if>
+            <if test="item.isDeleted!=null"> is_deleted,</if>
+            <if test="item.createTime!=null"> create_time,</if>
+            <if test="item.updateTime!=null"> update_time,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="item.id!=null">#{item.id,jdbcType=INTEGER},
+            </if>
+            <if test="item.title!=null">#{item.title,jdbcType=VARCHAR},
+            </if>
+            <if test="item.itemCode!=null">#{item.itemCode,jdbcType=VARCHAR},
+            </if>
+            <if test="item.barCode!=null">#{item.barCode,jdbcType=VARCHAR},
+            </if>
+            <if test="item.property!=null">#{item.property,jdbcType=VARCHAR},
+            </if>
+            <if test="item.sellingPoint!=null">#{item.sellingPoint,jdbcType=VARCHAR},
+            </if>
+            <if test="item.buyRemind!=null">#{item.buyRemind,jdbcType=VARCHAR},
+            </if>
+            <if test="item.expirationDate!=null">#{item.expirationDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="item.tags!=null">#{item.tags,jdbcType=VARCHAR},
+            </if>
+            <if test="item.categoryId!=null">#{item.categoryId,jdbcType=INTEGER},
+            </if>
+            <if test="item.brandId!=null">#{item.brandId,jdbcType=INTEGER},
+            </if>
+            <if test="item.unitId!=null">#{item.unitId,jdbcType=INTEGER},
+            </if>
+            <if test="item.expirationDateStatus!=null">#{item.expirationDateStatus,jdbcType=INTEGER},
+            </if>
+            <if test="item.itemType!=null">#{item.itemType,jdbcType=INTEGER},
+            </if>
+            <if test="item.isPresent!=null">#{item.isPresent,jdbcType=TINYINT},
+            </if>
+            <if test="item.isRecycle!=null">#{item.isRecycle,jdbcType=TINYINT},
+            </if>
+            <if test="item.isDeleted!=null">#{item.isDeleted,jdbcType=TINYINT},
+            </if>
+            <if test="item.createTime!=null">#{item.createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="item.updateTime!=null">#{item.updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO item (
+        <include refid="Base_Column_List"/>
+        )VALUES
+        <foreach collection="items" item="item" index="index" separator=",">
+            (
+            #{item.id,jdbcType=INTEGER},
+            #{item.title,jdbcType=VARCHAR},
+            #{item.itemCode,jdbcType=VARCHAR},
+            #{item.barCode,jdbcType=VARCHAR},
+            #{item.property,jdbcType=VARCHAR},
+            #{item.sellingPoint,jdbcType=VARCHAR},
+            #{item.buyRemind,jdbcType=VARCHAR},
+            #{item.expirationDate,jdbcType=TIMESTAMP},
+            #{item.tags,jdbcType=VARCHAR},
+            #{item.categoryId,jdbcType=INTEGER},
+            #{item.brandId,jdbcType=INTEGER},
+            #{item.unitId,jdbcType=INTEGER},
+            #{item.expirationDateStatus,jdbcType=INTEGER},
+            #{item.itemType,jdbcType=INTEGER},
+            #{item.isPresent,jdbcType=TINYINT},
+            #{item.isRecycle,jdbcType=TINYINT},
+            #{item.isDeleted,jdbcType=TINYINT},
+            #{item.createTime,jdbcType=TIMESTAMP},
+            #{item.updateTime,jdbcType=TIMESTAMP}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE item
+        <set>
+            <if test="item.id != null"> id= #{item.id,jdbcType=INTEGER},</if>
+            <if test="item.title != null"> title= #{item.title,jdbcType=VARCHAR},</if>
+            <if test="item.itemCode != null"> item_code= #{item.itemCode,jdbcType=VARCHAR},</if>
+            <if test="item.barCode != null"> bar_code= #{item.barCode,jdbcType=VARCHAR},</if>
+            <if test="item.property != null"> property= #{item.property,jdbcType=VARCHAR},</if>
+            <if test="item.sellingPoint != null"> selling_point= #{item.sellingPoint,jdbcType=VARCHAR},</if>
+            <if test="item.buyRemind != null"> buy_remind= #{item.buyRemind,jdbcType=VARCHAR},</if>
+            <if test="item.expirationDate != null"> expiration_date= #{item.expirationDate,jdbcType=TIMESTAMP},</if>
+            <if test="item.tags != null"> tags= #{item.tags,jdbcType=VARCHAR},</if>
+            <if test="item.categoryId != null"> category_id= #{item.categoryId,jdbcType=INTEGER},</if>
+            <if test="item.brandId != null"> brand_id= #{item.brandId,jdbcType=INTEGER},</if>
+            <if test="item.unitId != null"> unit_id= #{item.unitId,jdbcType=INTEGER},</if>
+            <if test="item.expirationDateStatus != null"> expiration_date_status= #{item.expirationDateStatus,jdbcType=INTEGER},</if>
+            <if test="item.itemType != null"> item_type= #{item.itemType,jdbcType=INTEGER},</if>
+            <if test="item.isPresent != null"> is_present= #{item.isPresent,jdbcType=TINYINT},</if>
+            <if test="item.isRecycle != null"> is_recycle= #{item.isRecycle,jdbcType=TINYINT},</if>
+            <if test="item.isDeleted != null"> is_deleted= #{item.isDeleted,jdbcType=TINYINT},</if>
+            <if test="item.createTime != null"> create_time= #{item.createTime,jdbcType=TIMESTAMP},</if>
+            <if test="item.updateTime != null"> update_time= #{item.updateTime,jdbcType=TIMESTAMP}</if>
+        </set>
+        WHERE id = #{item.id,jdbcType=INTEGER}
+    </update>
+</mapper>
+
