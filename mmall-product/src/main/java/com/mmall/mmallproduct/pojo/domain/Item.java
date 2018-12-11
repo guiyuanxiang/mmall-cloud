@@ -1,5 +1,6 @@
 package com.mmall.mmallproduct.pojo.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -104,12 +105,13 @@ public class Item implements Serializable {
     /**
      * 创建时间
      */
+    @JsonIgnore
     private Date createTime;
 
     /**
      * 修改时间
      */
+    @JsonIgnore
     private Date updateTime;
-
 
 }
