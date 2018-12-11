@@ -1,5 +1,6 @@
 package com.mmall.mmallproduct.pojo.vo;
 
+import com.mmall.mmallproduct.pojo.domain.Item;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -9,5 +10,5 @@ import java.io.Serializable;
  * @date: 2018/12/10 17:35
  */
 @Data
-public class ItemVo implements Serializable{
+public class ItemVo extends Item implements Serializable{
 }

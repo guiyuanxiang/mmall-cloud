@@ -176,7 +176,7 @@
     <select id="list" resultMap="BaseResultMap" parameterType="com.mmall.mmallproduct.pojo.param.ItemParam">
         select
         <include refid="Base_Column_List"/>
-        from item where is_del=0 limit #{pageStart},#{pageSize}
+        from item limit #{pageStart},#{pageSize}
     </select>
 </mapper>
 

@@ -65,7 +65,6 @@ public class DruidDataSourceProperties {
         notNullAdd(properties, "testWhileIdle", this.testWhileIdle);
         notNullAdd(properties, "testOnBorrow", this.testOnBorrow);
         notNullAdd(properties, "validationQuery", this.validationQuery);
-        notNullAdd(properties, "useGlobalDataSourceStat", this.useGlobalDataSourceStat);
         notNullAdd(properties, "filters", this.filters);
         notNullAdd(properties, "timeBetweenLogStatsMillis", this.timeBetweenLogStatsMillis);
         notNullAdd(properties, "stat.sql.MaxSize", this.maxSize);

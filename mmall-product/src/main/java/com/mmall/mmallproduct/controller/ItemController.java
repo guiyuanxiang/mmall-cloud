@@ -1,5 +1,6 @@
 package com.mmall.mmallproduct.controller;
 
+import com.mmall.common.util.ServerResponse;
 import com.mmall.mmallproduct.pojo.param.ItemParam;
 import com.mmall.mmallproduct.service.ItemService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +21,8 @@ public class ItemController {
     private ItemService itemService;
 
     @GetMapping("list")
-    public Object list(ItemParam itemParam) {
+    public ServerResponse list(ItemParam itemParam) {
         ItemParam.initPage(itemParam);
-        return itemService.list(itemParam);
+        return ServerResponse.createBySuccess(itemService.list(itemParam));
     }
 }
