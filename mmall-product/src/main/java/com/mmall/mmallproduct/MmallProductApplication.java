@@ -13,7 +13,6 @@ import org.springframework.context.annotation.ImportResource;
 public class MmallProductApplication {
 
     public static void main(String[] args) {
-        //todo sql优化
         SpringApplication.run(MmallProductApplication.class, args);
     }
 }
