@@ -47,50 +47,6 @@
         update_time
     </sql>
 
-    <!--auto generated Code-->
-    <insert id="insert" useGeneratedKeys="true" keyProperty="item.id">
-        INSERT INTO item (
-            id,
-            title,
-            item_code,
-            bar_code,
-            property,
-            selling_point,
-            buy_remind,
-            expiration_date,
-            tags,
-            category_id,
-            brand_id,
-            unit_id,
-            expiration_date_status,
-            item_type,
-            is_present,
-            is_recycle,
-            is_deleted,
-            create_time,
-            update_time
-        ) VALUES (
-            #{item.id,jdbcType=INTEGER},
-            #{item.title,jdbcType=VARCHAR},
-            #{item.itemCode,jdbcType=VARCHAR},
-            #{item.barCode,jdbcType=VARCHAR},
-            #{item.property,jdbcType=VARCHAR},
-            #{item.sellingPoint,jdbcType=VARCHAR},
-            #{item.buyRemind,jdbcType=VARCHAR},
-            #{item.expirationDate,jdbcType=TIMESTAMP},
-            #{item.tags,jdbcType=VARCHAR},
-            #{item.categoryId,jdbcType=INTEGER},
-            #{item.brandId,jdbcType=INTEGER},
-            #{item.unitId,jdbcType=INTEGER},
-            #{item.expirationDateStatus,jdbcType=INTEGER},
-            #{item.itemType,jdbcType=INTEGER},
-            #{item.isPresent,jdbcType=TINYINT},
-            #{item.isRecycle,jdbcType=TINYINT},
-            #{item.isDeleted,jdbcType=TINYINT},
-            #{item.createTime,jdbcType=TIMESTAMP},
-            #{item.updateTime,jdbcType=TIMESTAMP}
-        )
-    </insert>
 
     <!--auto generated Code-->
     <insert id="insertSelective" useGeneratedKeys="true" keyProperty="item.id">
@@ -217,10 +173,10 @@
         </set>
         WHERE id = #{item.id,jdbcType=INTEGER}
     </update>
-    <select id="list" resultMap="BaseResultMap" parameterType="com.mmall.mmallproduct.pojo.domain.Item">
+    <select id="list" resultMap="BaseResultMap" parameterType="com.mmall.mmallproduct.pojo.param.ItemParam">
         select
         <include refid="Base_Column_List"/>
-        from item
+        from item where is_del=0 limit #{pageStart},#{pageSize}
     </select>
 </mapper>
 

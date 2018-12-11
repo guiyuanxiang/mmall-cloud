@@ -34,5 +34,11 @@ public interface ItemMapper {
      */
     int update(@Param("item") Item item);
 
+    /**
+     * 分页查询
+     *
+     * @param itemParam ItemParam
+     * @return List<Item>
+     */
     List<Item> list(ItemParam itemParam);
 }
