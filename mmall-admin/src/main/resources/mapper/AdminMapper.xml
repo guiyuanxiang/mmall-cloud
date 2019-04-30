@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mmall.admin.mapper.AdminMapper">
+    <!--auto generated Code-->
+    <resultMap id="BaseResultMap" type="com.mmall.admin.pojo.entity.AdminEntity">
+        <result column="id" property="id" jdbcType="BIGINT"/>
+        <result column="shop_ids" property="shopIds" jdbcType="VARCHAR"/>
+        <result column="role_ids" property="roleIds" jdbcType="VARCHAR"/>
+        <result column="role_names" property="roleNames" jdbcType="VARCHAR"/>
+        <result column="login_name" property="loginName" jdbcType="VARCHAR"/>
+        <result column="login_password" property="loginPassword" jdbcType="VARCHAR"/>
+        <result column="owner" property="owner" jdbcType="VARCHAR"/>
+        <result column="state" property="state" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="is_deleted" property="isDeleted" jdbcType="INTEGER"/>
+        <result column="last_login_at" property="lastLoginAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="Base_Column_List">
+            `id`,
+            `shop_ids`,
+            `role_ids`,
+            `role_names`,
+            `login_name`,
+            `login_password`,
+            `owner`,
+            `state`,
+            `create_time`,
+            `update_time`,
+            `is_deleted`,
+            `last_login_at`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="adminEntity.id">
+        INSERT INTO admin (`id`,
+                                  `shop_ids`,
+                                  `role_ids`,
+                                  `role_names`,
+                                  `login_name`,
+                                  `login_password`,
+                                  `owner`,
+                                  `state`,
+                                  `create_time`,
+                                  `update_time`,
+                                  `is_deleted`,
+                                  `last_login_at`)
+        VALUES (#{adminEntity.id,jdbcType=BIGINT},
+                #{adminEntity.shopIds,jdbcType=VARCHAR},
+                #{adminEntity.roleIds,jdbcType=VARCHAR},
+                #{adminEntity.roleNames,jdbcType=VARCHAR},
+                #{adminEntity.loginName,jdbcType=VARCHAR},
+                #{adminEntity.loginPassword,jdbcType=VARCHAR},
+                #{adminEntity.owner,jdbcType=VARCHAR},
+                #{adminEntity.state,jdbcType=INTEGER},
+                #{adminEntity.createTime,jdbcType=TIMESTAMP},
+                #{adminEntity.updateTime,jdbcType=TIMESTAMP},
+                #{adminEntity.isDeleted,jdbcType=INTEGER},
+                #{adminEntity.lastLoginAt,jdbcType=TIMESTAMP})
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="adminEntity.id">
+        INSERT INTO admin
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="adminEntity.id!=null">`id`,</if>
+            <if test="adminEntity.shopIds!=null">`shop_ids`,</if>
+            <if test="adminEntity.roleIds!=null">`role_ids`,</if>
+            <if test="adminEntity.roleNames!=null">`role_names`,</if>
+            <if test="adminEntity.loginName!=null">`login_name`,</if>
+            <if test="adminEntity.loginPassword!=null">`login_password`,</if>
+            <if test="adminEntity.owner!=null">`owner`,</if>
+            <if test="adminEntity.state!=null">`state`,</if>
+            <if test="adminEntity.createTime!=null">`create_time`,</if>
+            <if test="adminEntity.updateTime!=null">`update_time`,</if>
+            <if test="adminEntity.isDeleted!=null">`is_deleted`,</if>
+            <if test="adminEntity.lastLoginAt!=null">`last_login_at`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="adminEntity.id!=null">#{adminEntity.id,jdbcType=BIGINT},
+            </if>
+            <if test="adminEntity.shopIds!=null">#{adminEntity.shopIds,jdbcType=VARCHAR},
+            </if>
+            <if test="adminEntity.roleIds!=null">#{adminEntity.roleIds,jdbcType=VARCHAR},
+            </if>
+            <if test="adminEntity.roleNames!=null">#{adminEntity.roleNames,jdbcType=VARCHAR},
+            </if>
+            <if test="adminEntity.loginName!=null">#{adminEntity.loginName,jdbcType=VARCHAR},
+            </if>
+            <if test="adminEntity.loginPassword!=null">#{adminEntity.loginPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="adminEntity.owner!=null">#{adminEntity.owner,jdbcType=VARCHAR},
+            </if>
+            <if test="adminEntity.state!=null">#{adminEntity.state,jdbcType=INTEGER},
+            </if>
+            <if test="adminEntity.createTime!=null">#{adminEntity.createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="adminEntity.updateTime!=null">#{adminEntity.updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="adminEntity.isDeleted!=null">#{adminEntity.isDeleted,jdbcType=INTEGER},
+            </if>
+            <if test="adminEntity.lastLoginAt!=null">#{adminEntity.lastLoginAt,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO admin (
+        `id`,
+        `shop_ids`,
+        `role_ids`,
+        `role_names`,
+        `login_name`,
+        `login_password`,
+        `owner`,
+        `state`,
+        `create_time`,
+        `update_time`,
+        `is_deleted`,
+        `last_login_at`
+        )VALUES
+        <foreach collection="adminEntitys" item="adminEntity" index="index" separator=",">
+            (
+            #{adminEntity.id,jdbcType=BIGINT},
+            #{adminEntity.shopIds,jdbcType=VARCHAR},
+            #{adminEntity.roleIds,jdbcType=VARCHAR},
+            #{adminEntity.roleNames,jdbcType=VARCHAR},
+            #{adminEntity.loginName,jdbcType=VARCHAR},
+            #{adminEntity.loginPassword,jdbcType=VARCHAR},
+            #{adminEntity.owner,jdbcType=VARCHAR},
+            #{adminEntity.state,jdbcType=INTEGER},
+            #{adminEntity.createTime,jdbcType=TIMESTAMP},
+            #{adminEntity.updateTime,jdbcType=TIMESTAMP},
+            #{adminEntity.isDeleted,jdbcType=INTEGER},
+            #{adminEntity.lastLoginAt,jdbcType=TIMESTAMP}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="updateByPrimaryKeySelective">
+        UPDATE admin
+        <set>
+            <if test="adminEntity.shopIds != null">`shop_ids`= #{adminEntity.shopIds,jdbcType=VARCHAR},</if>
+            <if test="adminEntity.roleIds != null">`role_ids`= #{adminEntity.roleIds,jdbcType=VARCHAR},</if>
+            <if test="adminEntity.roleNames != null">`role_names`= #{adminEntity.roleNames,jdbcType=VARCHAR},</if>
+            <if test="adminEntity.loginName != null">`login_name`= #{adminEntity.loginName,jdbcType=VARCHAR},</if>
+            <if test="adminEntity.loginPassword != null">`login_password`=
+                #{adminEntity.loginPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="adminEntity.owner != null">`owner`= #{adminEntity.owner,jdbcType=VARCHAR},</if>
+            <if test="adminEntity.state != null">`state`= #{adminEntity.state,jdbcType=INTEGER},</if>
+            <if test="adminEntity.createTime != null">`create_time`= #{adminEntity.createTime,jdbcType=TIMESTAMP},</if>
+            <if test="adminEntity.updateTime != null">`update_time`= #{adminEntity.updateTime,jdbcType=TIMESTAMP},</if>
+            <if test="adminEntity.isDeleted != null">`is_deleted`= #{adminEntity.isDeleted,jdbcType=INTEGER},</if>
+            <if test="adminEntity.lastLoginAt != null">`last_login_at`= #{adminEntity.lastLoginAt,jdbcType=TIMESTAMP}
+            </if>
+        </set>
+        WHERE `id` = #{adminEntity.id,jdbcType=BIGINT}
+    </update>
+    <select id="selectByLoginName" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from admin where is_deleted = 0 and login_name = #{loginName,jdbcType=VARCHAR}
+    </select>
+</mapper>
+

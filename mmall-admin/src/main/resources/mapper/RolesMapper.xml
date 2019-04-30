@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mmall.admin.pojo.entity.RolesMapper">
+    <!--auto generated Code-->
+    <resultMap id="BaseResultMap" type="com.mmall.admin.pojo.entity.RolesEntity">
+        <result column="id" property="id" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="created" property="created" jdbcType="TIMESTAMP"/>
+        <result column="updated" property="updated" jdbcType="TIMESTAMP"/>
+        <result column="is_deleted" property="isDeleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="Base_Column_List">
+            `id`,
+            `name`,
+            `created`,
+            `updated`,
+            `is_deleted`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="rolesEntity.id">
+        INSERT INTO roles
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="rolesEntity.id!=null">`id`,</if>
+            <if test="rolesEntity.name!=null">`name`,</if>
+            <if test="rolesEntity.created!=null">`created`,</if>
+            <if test="rolesEntity.updated!=null">`updated`,</if>
+            <if test="rolesEntity.isDeleted!=null">`is_deleted`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="rolesEntity.id!=null">#{rolesEntity.id,jdbcType=BIGINT},
+            </if>
+            <if test="rolesEntity.name!=null">#{rolesEntity.name,jdbcType=VARCHAR},
+            </if>
+            <if test="rolesEntity.created!=null">#{rolesEntity.created,jdbcType=TIMESTAMP},
+            </if>
+            <if test="rolesEntity.updated!=null">#{rolesEntity.updated,jdbcType=TIMESTAMP},
+            </if>
+            <if test="rolesEntity.isDeleted!=null">#{rolesEntity.isDeleted,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO roles (
+        `id`,
+        `name`,
+        `created`,
+        `updated`,
+        `is_deleted`
+        )VALUES
+        <foreach collection="rolesEntitys" item="rolesEntity" index="index" separator=",">
+            (
+            #{rolesEntity.id,jdbcType=BIGINT},
+            #{rolesEntity.name,jdbcType=VARCHAR},
+            #{rolesEntity.created,jdbcType=TIMESTAMP},
+            #{rolesEntity.updated,jdbcType=TIMESTAMP},
+            #{rolesEntity.isDeleted,jdbcType=INTEGER}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="updateByPrimaryKeySelective">
+        UPDATE roles
+        <set>
+            <if test="rolesEntity.name != null">`name`= #{rolesEntity.name,jdbcType=VARCHAR},</if>
+            <if test="rolesEntity.created != null">`created`= #{rolesEntity.created,jdbcType=TIMESTAMP},</if>
+            <if test="rolesEntity.updated != null">`updated`= #{rolesEntity.updated,jdbcType=TIMESTAMP},</if>
+            <if test="rolesEntity.isDeleted != null">`is_deleted`= #{rolesEntity.isDeleted,jdbcType=INTEGER}</if>
+        </set>
+        WHERE `id` = #{rolesEntity.id,jdbcType=BIGINT}
+    </update>
+    <select id="selectByIdList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from roles
+        where is_deleted = 0 and id in
+        <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+</mapper>
+

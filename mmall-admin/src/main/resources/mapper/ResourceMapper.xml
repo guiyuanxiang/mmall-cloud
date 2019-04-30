@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mmall.admin.mapper.ResourceMapper">
+    <!--auto generated Code-->
+    <resultMap id="BaseResultMap" type="com.mmall.admin.pojo.entity.ResourceEntity">
+        <result column="id" property="id" jdbcType="BIGINT"/>
+        <result column="level" property="level" jdbcType="INTEGER"/>
+        <result column="parent_id" property="parentId" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="action_id" property="actionId" jdbcType="BIGINT"/>
+        <result column="code" property="code" jdbcType="VARCHAR"/>
+        <result column="icon" property="icon" jdbcType="VARCHAR"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="sort" property="sort" jdbcType="INTEGER"/>
+        <result column="display_icon" property="displayIcon" jdbcType="VARCHAR"/>
+        <result column="is_deleted" property="isDeleted" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="Base_Column_List">
+            `id`,
+            `level`,
+            `parent_id`,
+            `name`,
+            `action_id`,
+            `code`,
+            `icon`,
+            `url`,
+            `sort`,
+            `display_icon`,
+            `is_deleted`,
+            `create_time`,
+            `update_time`
+    </sql>
+
+    s    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="resourceEntity.id">
+        INSERT INTO resource
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="resourceEntity.id!=null">`id`,</if>
+            <if test="resourceEntity.level!=null">`level`,</if>
+            <if test="resourceEntity.parentId!=null">`parent_id`,</if>
+            <if test="resourceEntity.name!=null">`name`,</if>
+            <if test="resourceEntity.actionId!=null">`action_id`,</if>
+            <if test="resourceEntity.code!=null">`code`,</if>
+            <if test="resourceEntity.icon!=null">`icon`,</if>
+            <if test="resourceEntity.url!=null">`url`,</if>
+            <if test="resourceEntity.sort!=null">`sort`,</if>
+            <if test="resourceEntity.displayIcon!=null">`display_icon`,</if>
+            <if test="resourceEntity.isDeleted!=null">`is_deleted`,</if>
+            <if test="resourceEntity.createTime!=null">`create_time`,</if>
+            <if test="resourceEntity.updateTime!=null">`update_time`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="resourceEntity.id!=null">#{resourceEntity.id,jdbcType=BIGINT},
+            </if>
+            <if test="resourceEntity.level!=null">#{resourceEntity.level,jdbcType=INTEGER},
+            </if>
+            <if test="resourceEntity.parentId!=null">#{resourceEntity.parentId,jdbcType=BIGINT},
+            </if>
+            <if test="resourceEntity.name!=null">#{resourceEntity.name,jdbcType=VARCHAR},
+            </if>
+            <if test="resourceEntity.actionId!=null">#{resourceEntity.actionId,jdbcType=BIGINT},
+            </if>
+            <if test="resourceEntity.code!=null">#{resourceEntity.code,jdbcType=VARCHAR},
+            </if>
+            <if test="resourceEntity.icon!=null">#{resourceEntity.icon,jdbcType=VARCHAR},
+            </if>
+            <if test="resourceEntity.url!=null">#{resourceEntity.url,jdbcType=VARCHAR},
+            </if>
+            <if test="resourceEntity.sort!=null">#{resourceEntity.sort,jdbcType=INTEGER},
+            </if>
+            <if test="resourceEntity.displayIcon!=null">#{resourceEntity.displayIcon,jdbcType=VARCHAR},
+            </if>
+            <if test="resourceEntity.isDeleted!=null">#{resourceEntity.isDeleted,jdbcType=INTEGER},
+            </if>
+            <if test="resourceEntity.createTime!=null">#{resourceEntity.createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="resourceEntity.updateTime!=null">#{resourceEntity.updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO resource (
+        `id`,
+        `level`,
+        `parent_id`,
+        `name`,
+        `action_id`,
+        `code`,
+        `icon`,
+        `url`,
+        `sort`,
+        `display_icon`,
+        `is_deleted`,
+        `create_time`,
+        `update_time`
+        )VALUES
+        <foreach collection="resourceEntitys" item="resourceEntity" index="index" separator=",">
+            (
+            #{resourceEntity.id,jdbcType=BIGINT},
+            #{resourceEntity.level,jdbcType=INTEGER},
+            #{resourceEntity.parentId,jdbcType=BIGINT},
+            #{resourceEntity.name,jdbcType=VARCHAR},
+            #{resourceEntity.actionId,jdbcType=BIGINT},
+            #{resourceEntity.code,jdbcType=VARCHAR},
+            #{resourceEntity.icon,jdbcType=VARCHAR},
+            #{resourceEntity.url,jdbcType=VARCHAR},
+            #{resourceEntity.sort,jdbcType=INTEGER},
+            #{resourceEntity.displayIcon,jdbcType=VARCHAR},
+            #{resourceEntity.isDeleted,jdbcType=INTEGER},
+            #{resourceEntity.createTime,jdbcType=TIMESTAMP},
+            #{resourceEntity.updateTime,jdbcType=TIMESTAMP}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="updateByPrimaryKeySelective">
+        UPDATE resource
+        <set>
+            <if test="resourceEntity.level != null">`level`= #{resourceEntity.level,jdbcType=INTEGER},</if>
+            <if test="resourceEntity.parentId != null">`parent_id`= #{resourceEntity.parentId,jdbcType=BIGINT},</if>
+            <if test="resourceEntity.name != null">`name`= #{resourceEntity.name,jdbcType=VARCHAR},</if>
+            <if test="resourceEntity.actionId != null">`action_id`= #{resourceEntity.actionId,jdbcType=BIGINT},</if>
+            <if test="resourceEntity.code != null">`code`= #{resourceEntity.code,jdbcType=VARCHAR},</if>
+            <if test="resourceEntity.icon != null">`icon`= #{resourceEntity.icon,jdbcType=VARCHAR},</if>
+            <if test="resourceEntity.url != null">`url`= #{resourceEntity.url,jdbcType=VARCHAR},</if>
+            <if test="resourceEntity.sort != null">`sort`= #{resourceEntity.sort,jdbcType=INTEGER},</if>
+            <if test="resourceEntity.displayIcon != null">`display_icon`=
+                #{resourceEntity.displayIcon,jdbcType=VARCHAR},
+            </if>
+            <if test="resourceEntity.isDeleted != null">`is_deleted`= #{resourceEntity.isDeleted,jdbcType=INTEGER},</if>
+            <if test="resourceEntity.createTime != null">`create_time`=
+                #{resourceEntity.createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="resourceEntity.updateTime != null">`update_time`=
+                #{resourceEntity.updateTime,jdbcType=TIMESTAMP}
+            </if>
+        </set>
+        WHERE `id` = #{resourceEntity.id,jdbcType=BIGINT}
+    </update>
+
+    <select id="selectButton" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from resource
+        where id in
+        <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+            #{item,jdbcType=BIGINT}
+        </foreach>
+    </select>
+
+</mapper>
+
